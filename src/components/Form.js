@@ -56,11 +56,12 @@ export default function Form({ handleClose, setDialogBox }) {
             }).then((resp) => {
                 console.log(resp);
                 console.log("Form Submitted");
+                setDialogBox("payment");
             }).catch((err) => {
-                alert("Backend server isn't working \n" + err + "\nPlease try again later! Data is not saved in database. Still you can take look of client side. \n\nThanks!");
+                alert("Backend server isn't working \n" + err + "\nPlease try again later! Still you can take look of client side. \n\nThanks!");
                 console.warn(err);
+                setDialogBox("payment");
             });
-            setDialogBox("payment");
         }
         else {
             setValidation({
